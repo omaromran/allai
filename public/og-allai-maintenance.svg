@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">All AI — home maintenance connected</title>
+  <desc id="ogDesc">Stylized home with an AI hub linking tenant, landlord, and contractor.</desc>
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="40%" stop-color="#0c1830"/>
+      <stop offset="100%" stop-color="#0a1428"/>
+    </linearGradient>
+    <linearGradient id="ogSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(17,106,254,0.25)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="ogWire" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#116afe"/>
+      <stop offset="50%" stop-color="#5b8dff"/>
+      <stop offset="100%" stop-color="#9443ca"/>
+    </linearGradient>
+    <linearGradient id="ogHub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e5fe8"/>
+      <stop offset="100%" stop-color="#6b3fa0"/>
+    </linearGradient>
+    <linearGradient id="ogGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.16)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+    <radialGradient id="ogWindow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="100%" stop-color="#c9a227"/>
+    </radialGradient>
+    <filter id="ogGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <rect width="1200" height="320" fill="url(#ogSky)"/>
+
+  <!-- stars -->
+  <g fill="#b8d9ff" opacity="0.35">
+    <circle cx="980" cy="70" r="1.5"/><circle cx="1040" cy="110" r="1"/><circle cx="1120" cy="55" r="1.2"/>
+    <circle cx="150" cy="90" r="1"/><circle cx="220" cy="45" r="1.3"/>
+  </g>
+
+  <!-- Home (left) -->
+  <g transform="translate(72, 168)" filter="url(#ogGlow)">
+    <path d="M 0 320 L 0 140 L 168 0 L 336 140 L 336 320 Z" fill="#152238" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    <path d="M 48 320 L 48 200 L 288 200 L 288 320 Z" fill="#1a2d4a" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="132" y="248" width="72" height="72" rx="4" fill="#0f1a2e" stroke="rgba(255,255,255,0.15)"/>
+    <rect x="72" y="220" width="56" height="56" rx="4" fill="url(#ogWindow)" opacity="0.95"/>
+    <rect x="208" y="220" width="56" height="56" rx="4" fill="url(#ogWindow)" opacity="0.95"/>
+    <ellipse cx="168" cy="360" rx="200" ry="28" fill="rgba(17,106,254,0.12)"/>
+  </g>
+
+  <!-- Connector from home toward hub -->
+  <path d="M 420 380 Q 520 340 620 300" fill="none" stroke="url(#ogWire)" stroke-width="2.5" stroke-dasharray="8 12" opacity="0.55" stroke-linecap="round"/>
+
+  <!-- Network (right of home) -->
+  <g transform="translate(420, 40)">
+    <g fill="none" stroke="url(#ogWire)" stroke-width="2.2" stroke-linecap="round" opacity="0.88">
+      <path d="M 175 455 Q 280 380 400 318" stroke-dasharray="6 10"/>
+      <path d="M 625 455 Q 520 380 400 318" stroke-dasharray="6 10"/>
+      <path d="M 400 118 Q 400 210 400 248" stroke-dasharray="6 10"/>
+      <path d="M 175 455 Q 340 300 400 248" stroke-dasharray="4 8" opacity="0.5"/>
+      <path d="M 625 455 Q 460 300 400 248" stroke-dasharray="4 8" opacity="0.5"/>
+    </g>
+    <g fill="#8eb9ff" opacity="0.85">
+      <circle cx="285" cy="410" r="3.5"/><circle cx="515" cy="410" r="3.5"/><circle cx="400" cy="195" r="3"/>
+    </g>
+    <g filter="url(#ogGlow)">
+      <g transform="translate(268, 392)">
+        <circle r="24" fill="url(#ogGlass)" stroke="rgba(17,106,254,0.55)" stroke-width="1.5"/>
+        <circle cy="-2" r="7" fill="#116afe"/><rect x="-11" y="7" width="22" height="11" rx="3" fill="rgba(17,106,254,0.35)"/>
+        <path d="M -4 -10 L 0 -17 L 4 -10" stroke="#b8d9ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(532, 392)">
+        <circle r="24" fill="url(#ogGlass)" stroke="rgba(148,67,202,0.45)" stroke-width="1.5"/>
+        <circle cy="-2" r="7" fill="#9443ca"/><rect x="-11" y="7" width="22" height="11" rx="3" fill="rgba(148,67,202,0.3)"/>
+        <path d="M -4 -10 L 0 -17 L 4 -10" stroke="#e9c4ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(400, 208)">
+        <circle r="22" fill="url(#ogGlass)" stroke="rgba(17,106,254,0.5)" stroke-width="1.5"/>
+        <circle cy="-2" r="6" fill="#3b82f6"/><rect x="-9" y="6" width="18" height="9" rx="2" fill="rgba(59,130,246,0.35)"/>
+      </g>
+    </g>
+    <g font-family="system-ui, -apple-system, sans-serif" text-anchor="middle" font-weight="800">
+      <g transform="translate(140, 485)">
+        <rect x="-62" y="-44" width="124" height="86" rx="16" fill="url(#ogGlass)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+        <path d="M 0 -22 L 22 -6 V 14 H -22 V -6 Z" fill="none" stroke="#9ec5ff" stroke-width="2" stroke-linejoin="round"/>
+        <text y="38" fill="#c8dcff" font-size="12" letter-spacing="0.12em">TENANT</text>
+      </g>
+      <g transform="translate(400, 88)">
+        <rect x="-66" y="-42" width="132" height="82" rx="16" fill="url(#ogGlass)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+        <path d="M -28 12 V -8 H 28 V 12 M -28 -8 V -20 H 28 V -8" fill="none" stroke="#9ec5ff" stroke-width="2" stroke-linecap="round"/>
+        <text y="36" fill="#c8dcff" font-size="12" letter-spacing="0.12em">LANDLORD</text>
+      </g>
+      <g transform="translate(660, 485)">
+        <rect x="-70" y="-44" width="140" height="86" rx="16" fill="url(#ogGlass)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+        <path d="M -20 8 L -28 -12 H 28 L -20 8 Z" fill="none" stroke="#9ec5ff" stroke-width="2" stroke-linejoin="round"/>
+        <text y="38" fill="#c8dcff" font-size="11" letter-spacing="0.1em">CONTRACTOR</text>
+      </g>
+    </g>
+    <g transform="translate(400, 300)" filter="url(#ogGlow)">
+      <circle r="92" fill="none" stroke="url(#ogWire)" stroke-width="1.2" opacity="0.35"/>
+      <circle r="74" fill="none" stroke="rgba(17,106,254,0.22)" stroke-width="1" stroke-dasharray="4 12"/>
+      <circle r="58" fill="url(#ogHub)" opacity="0.28"/>
+      <circle r="50" fill="url(#ogGlass)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <g stroke="#e8f0ff" stroke-width="2" fill="none" stroke-linecap="round">
+        <circle r="11" fill="rgba(17,106,254,0.45)" stroke="#b8d9ff"/>
+        <path d="M -28 -8 L -14 0 M 28 -8 L 14 0 M 0 -24 V -12 M 0 12 V 24 M -20 20 L -10 12 M 20 20 L 10 12"/>
+      </g>
+      <text y="78" fill="#dfeaff" font-size="10" font-weight="800" font-family="system-ui, sans-serif" text-anchor="middle" letter-spacing="0.2em">ALL AI HUB</text>
+    </g>
+    <g fill="#7eb8ff" opacity="0.55">
+      <path d="M 720 100 L 724 114 L 738 118 L 724 122 L 720 136 L 716 122 L 702 118 L 716 114 Z"/>
+    </g>
+  </g>
+
+  <!-- Wordmark strip -->
+  <text x="600" y="598" text-anchor="middle" fill="rgba(240,244,251,0.92)" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">All AI · Property maintenance, connected</text>
+</svg>
