@@ -15,8 +15,8 @@ const IMG = {
   /** About — people & operations, distinct from hub */
   aboutSpotlight:
     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=800&fit=crop",
-  /** Open Graph / social meta + walkthrough video thumbnail */
-  socialPreview: "/og-allai-maintenance.svg",
+  video:
+    "https://images.unsplash.com/photo-1531746797551-097c76b4304a?w=1600&h=900&fit=crop",
   gpt: [
     "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop",
@@ -553,11 +553,7 @@ export default function App() {
               issues, and drives resolutions—without the back-and-forth.
             </p>
             <div className="video-frame">
-              <img
-                src={IMG.socialPreview}
-                alt="All AI connects tenant, landlord, and contractor from the home"
-                loading="lazy"
-              />
+              <img src={IMG.video} alt="" loading="lazy" />
               <button type="button" className="play" aria-label="Play demo">
                 ▶
               </button>
