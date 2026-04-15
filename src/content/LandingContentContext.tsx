@@ -27,22 +27,40 @@ export function LandingContentProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const preview = params.get("cmsPreview") === "1";
+
+    const stripPreviewQuery = () => {
+      const u = new URL(window.location.href);
+      if (!u.searchParams.has("cmsPreview")) return;
+      u.searchParams.delete("cmsPreview");
+      const q = u.searchParams.toString();
+      window.history.replaceState(
+        null,
+        "",
+        `${u.pathname}${q ? `?${q}` : ""}${u.hash}`,
+      );
+    };
+
     if (preview) {
       const raw = sessionStorage.getItem("landing-content-preview");
       if (raw) {
         try {
           setContent(deepMerge(cloneDefault(), JSON.parse(raw)));
+          sessionStorage.removeItem("landing-content-preview");
+          stripPreviewQuery();
+          return;
         } catch {
-          /* ignore invalid preview */
+          sessionStorage.removeItem("landing-content-preview");
         }
       }
-      return;
+      stripPreviewQuery();
     }
 
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/landing-content.json", { cache: "no-store" });
+        const res = await fetch("/landing-content.json?v=4", {
+          cache: "no-store",
+        });
         if (!res.ok || cancelled) return;
         const data: unknown = await res.json();
         if (!cancelled) setContent(deepMerge(cloneDefault(), data));

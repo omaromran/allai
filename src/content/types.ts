@@ -1,4 +1,8 @@
-export type FeatureJourneyIconId = "clarify" | "route" | "proof";
+export type RoleCardIconId =
+  | "homeOwner"
+  | "landlord"
+  | "tenant"
+  | "contractor";
 
 export type HubFeatureIconId = "intake" | "routing" | "evidence" | "portfolio";
 
@@ -43,16 +47,17 @@ export interface LandingCopy {
     line3: string;
     line4: string;
   };
-  featureJourney: {
-    eyebrow: string;
-    titleMuted: string;
-    titleGradient: string;
-    lead: string;
-    steps: {
-      step: string;
+  builtForEveryone: {
+    title: string;
+    subtitle: string;
+    tagline: string;
+    popularLabel: string;
+    cards: {
+      icon: RoleCardIconId;
       title: string;
-      body: string;
-      icon: FeatureJourneyIconId;
+      description: string;
+      popular?: boolean;
+      features: string[];
     }[];
   };
   coordination: {

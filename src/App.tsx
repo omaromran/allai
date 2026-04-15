@@ -1,20 +1,35 @@
-import {
-  useEffect,
-  useLayoutEffect,
-  useState,
-  type ComponentType,
-} from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useLandingContent } from "./content/LandingContentContext";
-import type { FeatureJourneyIconId } from "./content/types";
-import { AboutPillarGlyph, HubFeatureGlyph } from "./landingVisuals";
+import {
+  AboutPillarGlyph,
+  HubFeatureGlyph,
+  RoleCardGlyph,
+} from "./landingVisuals";
+
+/**
+ * Legacy hero: 2×2 image mosaic (revert by replacing `.hero-visual` contents — see snippet below).
+ * Previous build also used a CSS float-grid collage; see git history for `HERO_FLOAT_CARDS` / `hero-float-*`.
+ */
+const HERO_MOSAIC_LEGACY_URLS = [
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop",
+  "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop",
+] as const;
+void HERO_MOSAIC_LEGACY_URLS;
+
+/*
+  Revert snippet:
+  <div className="hero-mosaic">
+    {HERO_MOSAIC_LEGACY_URLS.map((src) => (
+      <img key={src} src={src} alt="" loading="lazy" />
+    ))}
+  </div>
+*/
 
 const IMG = {
-  mosaic: [
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop",
-    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop",
-    "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop",
-  ],
+  /** Hero right rail — composite (tenant ↔ AI collage); asset: `public/images/hero-landing-page.png` */
+  heroComposite: "/images/hero-landing-page.png",
   /** Hub — vector illustration (AI agents + tenant / landlord / contractor) */
   hubCommandCenter: "/images/hub-command-agents.svg",
   /** About — people & operations, distinct from hub */
@@ -67,117 +82,6 @@ function GptChatGlyph() {
     </svg>
   );
 }
-
-function FeatureIconClarify() {
-  return (
-    <svg
-      className="features-step__glyph"
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M14 20.5h20M14 27.5h12"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinecap="round"
-      />
-      <path
-        d="M32 8H16a6 6 0 00-6 6v18a6 6 0 006 6h7l9 6v-6h4a6 6 0 006-6V14a6 6 0 00-6-6z"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinejoin="round"
-      />
-      <circle cx="36" cy="12" r="5" fill="currentColor" opacity="0.22" />
-      <path
-        d="M36 10v2.8l1.8 1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function FeatureIconRoute() {
-  return (
-    <svg
-      className="features-step__glyph"
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M8 38V14a4 4 0 014-4h24a4 4 0 014 4v24"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinecap="round"
-      />
-      <path
-        d="M8 38h32"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinecap="round"
-      />
-      <rect
-        x="14"
-        y="18"
-        width="20"
-        height="14"
-        rx="3"
-        stroke="currentColor"
-        strokeWidth="2.25"
-      />
-      <path
-        d="M19 25h10M24 21v8"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function FeatureIconProof() {
-  return (
-    <svg
-      className="features-step__glyph"
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-hidden="true"
-    >
-      <rect
-        x="10"
-        y="8"
-        width="28"
-        height="34"
-        rx="4"
-        stroke="currentColor"
-        strokeWidth="2.25"
-      />
-      <path
-        d="M16 16h16M16 23h10"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        opacity="0.45"
-      />
-      <path
-        d="M18 32.5l4.2 4.5L30 26"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const FEATURE_ICONS: Record<FeatureJourneyIconId, ComponentType> = {
-  clarify: FeatureIconClarify,
-  route: FeatureIconRoute,
-  proof: FeatureIconProof,
-};
 
 function LogoWordmark() {
   return (
@@ -319,10 +223,14 @@ export default function App() {
               </div>
             </div>
             <div className="hero-visual">
-              <div className="hero-mosaic">
-                {IMG.mosaic.map((src) => (
-                  <img key={src} src={src} alt="" loading="lazy" />
-                ))}
+              <div className="hero-composite-wrap">
+                <img
+                  src={IMG.heroComposite}
+                  alt="All AI handling tenant maintenance messages: AC issues, leaks, and scheduling in a single conversation view"
+                  className="hero-composite"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
@@ -362,76 +270,102 @@ export default function App() {
         >
           <div className="container">
             <h2 id="value-prop-heading" className="visually-hidden">
-              {content.valueProposition.gradientText}
-              {content.valueProposition.line1Suffix} {content.valueProposition.line2}{" "}
-              {content.valueProposition.line3} {content.valueProposition.line4}
+              {[
+                `${content.valueProposition.gradientText}${content.valueProposition.line1Suffix}`,
+                content.valueProposition.line2,
+                content.valueProposition.line3,
+                content.valueProposition.line4,
+              ]
+                .map((s) => s.trim())
+                .filter(Boolean)
+                .join(" ")}
             </h2>
             <p className="value-proposition__statement" aria-hidden="true">
-              <span className="value-proposition__line">
-                <span className="value-proposition__gradient">
-                  {content.valueProposition.gradientText}
+              {(content.valueProposition.gradientText ||
+                content.valueProposition.line1Suffix) && (
+                <span className="value-proposition__line">
+                  {content.valueProposition.gradientText ? (
+                    <span className="value-proposition__gradient">
+                      {content.valueProposition.gradientText}
+                    </span>
+                  ) : null}
+                  {content.valueProposition.line1Suffix}
                 </span>
-                {content.valueProposition.line1Suffix}
-              </span>
-              <span className="value-proposition__line">
-                {content.valueProposition.line2}
-              </span>
-              <span className="value-proposition__line">
-                {content.valueProposition.line3}
-              </span>
-              <span className="value-proposition__line">
-                {content.valueProposition.line4}
-              </span>
+              )}
+              {[content.valueProposition.line2, content.valueProposition.line3, content.valueProposition.line4]
+                .map((s) => s.trim())
+                .filter(Boolean)
+                .map((line, i) => (
+                  <span key={i} className="value-proposition__line">
+                    {line}
+                  </span>
+                ))}
             </p>
           </div>
         </section>
 
         <section
           id="features"
-          className="section-features"
+          className="built-for"
           aria-labelledby="features-heading"
         >
-          <div className="section-features__grid-bg" aria-hidden />
-          <div className="container section-features__inner">
-            <header className="features-journey-head">
-              <p className="features-journey-eyebrow">
-                {content.featureJourney.eyebrow}
-              </p>
-              <h2 id="features-heading" className="features-journey-title">
-                <span className="features-journey-title__muted">
-                  {content.featureJourney.titleMuted}
-                </span>
-                <span className="gradient-heading">
-                  {content.featureJourney.titleGradient}
-                </span>
+          <div className="built-for__bg" aria-hidden />
+          <div className="container built-for__inner">
+            <header className="built-for__head">
+              <h2 id="features-heading" className="built-for__title">
+                {content.builtForEveryone.title}
               </h2>
-              <p className="features-journey-lead">
-                {content.featureJourney.lead}
+              <p className="built-for__subtitle">
+                {content.builtForEveryone.subtitle}
+              </p>
+              <p className="built-for__tagline">
+                <span className="built-for__tagline-icon" aria-hidden>
+                  ★
+                </span>
+                {content.builtForEveryone.tagline}
+                <span className="built-for__tagline-spark" aria-hidden>
+                  ✦
+                </span>
               </p>
             </header>
-            <ol className="features-journey-track">
-              {content.featureJourney.steps.map((item, stepIndex) => {
-                const accent = (["a", "b", "c"] as const)[stepIndex] ?? "a";
-                const Icon = FEATURE_ICONS[item.icon];
-                return (
-                  <li key={item.step} className="features-journey-item">
-                    <article
-                      className={`features-step features-step--${accent}`}
-                    >
-                      <div className="features-step__glow" aria-hidden />
-                      <div className="features-step__top">
-                        <span className="features-step__badge">{item.step}</span>
-                        <div className="features-step__icon-wrap">
-                          <Icon />
-                        </div>
-                      </div>
-                      <h3 className="features-step__title">{item.title}</h3>
-                      <p className="features-step__body">{item.body}</p>
-                    </article>
-                  </li>
-                );
-              })}
-            </ol>
+            <ul className="built-for__grid">
+              {content.builtForEveryone.cards.map((card) => (
+                <li key={card.icon} className="built-for__cell">
+                  <article
+                    className={`built-for-card${card.popular ? " built-for-card--popular" : ""}`}
+                  >
+                    {card.popular ? (
+                      <span className="built-for-card__badge">
+                        {content.builtForEveryone.popularLabel}
+                      </span>
+                    ) : null}
+                    <div className="built-for-card__icon" aria-hidden>
+                      <RoleCardGlyph id={card.icon} />
+                    </div>
+                    <h3 className="built-for-card__title">{card.title}</h3>
+                    <p className="built-for-card__desc">{card.description}</p>
+                    <ul className="built-for-card__list">
+                      {card.features.map((line) => (
+                        <li key={line} className="built-for-card__item">
+                          <span className="built-for-card__check" aria-hidden>
+                            <svg viewBox="0 0 16 16" fill="none">
+                              <path
+                                d="M3.5 8.2l2.8 2.8 6.2-6.2"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

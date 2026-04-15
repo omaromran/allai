@@ -259,7 +259,8 @@ export default function LandingCMS() {
               keep your draft in this browser. Download{" "}
               <code className="cms-code">landing-content.json</code> and place it
               in <code className="cms-code">public/</code> to ship changes.
-              Use Preview to try the homepage with your draft (this tab only).
+              Preview opens the homepage once with your draft, then clears the
+              preview flag so reloads use the published JSON file.
             </p>
           </div>
           <div className="cms-toolbar">

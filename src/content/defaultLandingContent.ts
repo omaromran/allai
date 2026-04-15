@@ -54,35 +54,60 @@ export const DEFAULT_LANDING_COPY: LandingCopy = {
     ],
   },
   valueProposition: {
-    gradientText: "Smart Property Care",
-    line1Suffix: " that helps property managers and owners",
-    line2: "automate maintenance—from intake and triage to",
-    line3: "vendor coordination—so tenants stay informed and",
-    line4: "operations run with less noise and clearer accountability.",
+    gradientText: "Reimagining Property Maintenance",
+    line1Suffix: " with Fully Integrated, Agentic AI.",
+    line2:
+      "From diagnosis to resolution—Allai handles every step of real estate maintenance management.",
+    line3: "",
+    line4: "",
   },
-  featureJourney: {
-    eyebrow: "How it flows",
-    titleMuted: "From the first message ",
-    titleGradient: "to a clean close",
-    lead: "A deliberate three-stage loop—built for portfolios that cannot afford vague tickets, noisy inboxes, or mystery resolutions.",
-    steps: [
+  builtForEveryone: {
+    title: "Built for everyone on a property",
+    subtitle:
+      "Whether you live in the unit, own it, or keep it running — here’s how All AI fits your role.",
+    tagline: "Four roles, one platform",
+    popularLabel: "Popular",
+    cards: [
       {
-        step: "01",
-        title: "Clarify before it escalates",
-        body: "Guided follow-ups capture photos, severity, and access details—so the first human touch starts with context, not twenty questions.",
-        icon: "clarify",
+        icon: "homeOwner",
+        title: "Home owner",
+        description: "Maintain your home without the hassle.",
+        popular: true,
+        features: [
+          "Track maintenance & repairs",
+          "Find trusted contractors",
+          "Manage multiple properties",
+        ],
       },
       {
-        step: "02",
-        title: "Route with confidence",
-        body: "Issues match your playbooks, vendors, and SLAs. Windows get proposed and confirmed without the usual scheduling thread.",
-        icon: "route",
+        icon: "landlord",
+        title: "Landlord",
+        description: "Manage properties, tenants, and maintenance.",
+        features: [
+          "Manage properties & tenants",
+          "Track maintenance cases",
+          "Invite tenants automatically",
+        ],
       },
       {
-        step: "03",
-        title: "Close with a paper trail",
-        body: "Check-ins, completion proof, and tenant acknowledgment live in one timeline—clean handbacks and fewer “what happened?” reruns.",
-        icon: "proof",
+        icon: "tenant",
+        title: "Tenant",
+        description: "View your unit and submit requests.",
+        features: [
+          "Submit maintenance requests",
+          "Track case status",
+          "Approve appointments",
+        ],
+      },
+      {
+        icon: "contractor",
+        title: "Contractor",
+        description: "Open marketplace — real-time jobs matched to your trade.",
+        features: [
+          "Access the job marketplace",
+          "No cold leads — real maintenance needs",
+          "Direct connections with property teams",
+        ],
       },
     ],
   },
