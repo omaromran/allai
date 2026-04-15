@@ -1,0 +1,247 @@
+.cms {
+  --font: "Plus Jakarta Sans", system-ui, sans-serif;
+  min-height: 100vh;
+  background: #050a18;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font);
+}
+
+.cms-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(5, 10, 24, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.cms-header__inner {
+  width: min(112rem, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cms-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.cms-lead {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.cms-code {
+  font-size: 0.85em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #9ecbff;
+}
+
+.cms-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cms-save-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-right: 0.25rem;
+}
+
+.cms-save-feedback {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6ee7b7;
+  max-width: 12rem;
+  line-height: 1.35;
+}
+
+.cms-mode {
+  display: inline-flex;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.cms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cms-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.cms-btn--primary {
+  background: #116afe;
+  border-color: rgba(17, 106, 254, 0.6);
+}
+
+.cms-btn--primary:hover {
+  background: #125ae2;
+}
+
+.cms-btn--ghost {
+  background: transparent;
+}
+
+.cms-btn--active {
+  background: rgba(17, 106, 254, 0.35);
+  border-color: rgba(17, 106, 254, 0.5);
+}
+
+.cms-btn--small {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.cms-btn--file {
+  position: relative;
+  overflow: hidden;
+}
+
+.cms-file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.cms-main {
+  width: min(112rem, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+.cms-field {
+  margin-bottom: 1rem;
+}
+
+.cms-field__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.35rem;
+}
+
+.cms-field__input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(12, 18, 36, 0.85);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.9375rem;
+}
+
+.cms-field__textarea {
+  resize: vertical;
+  min-height: 3rem;
+  line-height: 1.5;
+}
+
+.cms-fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cms-legend {
+  padding: 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: rgba(25, 162, 254, 0.95);
+}
+
+.cms-array {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cms-object {
+  padding: 0.5rem 0;
+}
+
+.cms-empty {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.875rem;
+}
+
+.cms-json-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cms-json-editor {
+  width: 100%;
+  min-height: min(70vh, 52rem);
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0c1224;
+  color: #e8f0ff;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.cms-json-error {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  color: #fecaca;
+  font-size: 0.875rem;
+}
+
+.cms-json-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
