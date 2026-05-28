@@ -1,0 +1,587 @@
+/* Marketing inner pages — matches Casa landing tokens */
+
+.mkt-page .casa-header--solid {
+  background: rgba(250, 248, 244, 0.96);
+}
+
+.mkt-page .casa-nav a {
+  color: var(--casa-dark);
+}
+
+.mkt-page .casa-nav__active {
+  color: var(--casa-green);
+  font-weight: 600;
+}
+
+.mkt-main {
+  padding-top: 5.5rem;
+}
+
+/* —— Hero —— */
+.mkt-hero {
+  padding: clamp(3rem, 8vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.mkt-hero--beige {
+  background: var(--casa-bg);
+}
+
+.mkt-hero--white {
+  background: var(--casa-white);
+}
+
+.mkt-hero--green {
+  background: var(--casa-green);
+  color: #fff;
+}
+
+.mkt-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 26rem);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.mkt-hero__grid--center {
+  grid-template-columns: 1fr;
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mkt-hero__grid--center .casa-eyebrow,
+.mkt-hero__grid--center .casa-lead {
+  margin-inline: auto;
+}
+
+.mkt-hero--green .casa-eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mkt-hero--green .casa-h2,
+.mkt-hero--green .casa-h2--light {
+  color: #fff;
+}
+
+.mkt-hero--green .casa-lead,
+.mkt-hero--green .casa-lead--light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mkt-hero__visual img {
+  width: 100%;
+  border-radius: 1.25rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(15, 36, 25, 0.12);
+}
+
+.casa-btn--outline-mkt {
+  background: transparent;
+  color: var(--casa-dark);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.casa-btn--outline-mkt:hover {
+  background: var(--casa-cream);
+}
+
+.mkt-btn-on-beige.casa-btn--ghost {
+  color: var(--casa-dark);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.mkt-btn-on-beige.casa-btn--ghost:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mkt-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.mkt-hero__grid--center .mkt-hero__actions {
+  justify-content: center;
+}
+
+/* —— Pricing tiers —— */
+.mkt-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mkt-tier {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  background: var(--casa-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px rgba(15, 36, 25, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mkt-tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 36, 25, 0.1);
+}
+
+.mkt-tier--featured {
+  border-color: rgba(16, 54, 43, 0.25);
+  box-shadow: 0 20px 50px rgba(15, 36, 25, 0.14);
+  position: relative;
+}
+
+.mkt-tier--featured::before {
+  content: "Most popular";
+  position: absolute;
+  top: -0.65rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--casa-green);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mkt-tier__name {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--casa-green);
+}
+
+.mkt-tier__price {
+  margin: 0;
+  font-family: var(--casa-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.mkt-tier__period {
+  margin: 0.25rem 0 1rem;
+  font-size: 0.8125rem;
+  color: var(--casa-muted);
+}
+
+.mkt-tier__desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--casa-muted);
+  flex: 1;
+}
+
+.mkt-tier__features {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mkt-tier__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.mkt-tier__features li::before {
+  content: "✓";
+  flex-shrink: 0;
+  color: var(--casa-green);
+  font-weight: 700;
+}
+
+.mkt-tier .casa-btn {
+  width: 100%;
+}
+
+.mkt-note {
+  margin: 2rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--casa-muted);
+}
+
+/* —— Stats —— */
+.mkt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.mkt-stat {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  background: var(--casa-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+}
+
+.mkt-stat strong {
+  display: block;
+  font-family: var(--casa-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--casa-green);
+  line-height: 1.1;
+}
+
+.mkt-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--casa-muted);
+}
+
+/* —— Split feature —— */
+.mkt-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.mkt-split__visual img {
+  width: 100%;
+  border-radius: 1.125rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.mkt-split--reverse .mkt-split__copy {
+  order: 2;
+}
+
+.mkt-split--reverse .mkt-split__visual {
+  order: 1;
+}
+
+/* —— Values —— */
+.mkt-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.mkt-value {
+  padding: 1.35rem 1.15rem;
+  background: var(--casa-cream);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+}
+
+.mkt-value h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mkt-value p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--casa-muted);
+}
+
+/* —— Founders —— */
+.mkt-founders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mkt-founder {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--casa-white);
+  border-radius: 1.125rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mkt-founder img {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mkt-founder h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mkt-founder p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--casa-muted);
+}
+
+/* —— Integrations hub —— */
+.mkt-hub {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  background: var(--casa-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 60px rgba(15, 36, 25, 0.08);
+  overflow: hidden;
+}
+
+.mkt-hub::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(16, 54, 43, 0.06),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.mkt-hub__center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 14rem;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: var(--casa-green);
+  color: #fff;
+  border-radius: 1.25rem;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(15, 36, 25, 0.2);
+}
+
+.mkt-hub__center span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.mkt-hub__center strong {
+  font-family: var(--casa-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.mkt-hub__rings {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.mkt-hub__ring h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--casa-green);
+  text-align: center;
+}
+
+.mkt-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mkt-logo-pill {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--casa-cream);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--casa-dark);
+}
+
+/* —— Integration category cards —— */
+.mkt-int-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mkt-int-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--casa-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 28px rgba(15, 36, 25, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mkt-int-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(15, 36, 25, 0.12);
+}
+
+.mkt-int-card__img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.mkt-int-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mkt-int-card__body {
+  padding: 1.35rem 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mkt-int-card__body h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--casa-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.mkt-int-card__body > p {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--casa-muted);
+  flex: 1;
+}
+
+/* —— Flow steps —— */
+.mkt-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mkt-flow-step {
+  padding: 1.5rem 1.25rem;
+  background: var(--casa-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+}
+
+.mkt-flow-step__num {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--casa-green);
+}
+
+.mkt-flow-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.mkt-flow-step p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--casa-muted);
+}
+
+/* —— CTA band —— */
+.mkt-cta-band {
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 3.5rem);
+  background: var(--casa-green);
+  color: #fff;
+  border-radius: 1.25rem;
+}
+
+.mkt-cta-band h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--casa-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.mkt-cta-band p {
+  margin: 0 auto 1.25rem;
+  max-width: 40ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.mkt-cta-band .casa-btn--hero {
+  color: var(--casa-green);
+}
+
+.mkt-section-head {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+}
+
+.mkt-section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mkt-section-head--center .casa-lead {
+  margin-inline: auto;
+}
+
+@media (max-width: 960px) {
+  .mkt-hero__grid,
+  .mkt-split,
+  .mkt-tiers,
+  .mkt-int-grid,
+  .mkt-flow,
+  .mkt-values,
+  .mkt-founders,
+  .mkt-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mkt-hub__rings {
+    grid-template-columns: 1fr;
+  }
+
+  .mkt-split--reverse .mkt-split__copy,
+  .mkt-split--reverse .mkt-split__visual {
+    order: unset;
+  }
+}
+
+@media (max-width: 640px) {
+  .mkt-main {
+    padding-top: 4.75rem;
+  }
+}

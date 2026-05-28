@@ -1,0 +1,52 @@
+/* Allai logo — see Figma logo usage guidelines */
+
+.allai-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 7.5rem; /* ~120px digital minimum for full lockup */
+  text-decoration: none;
+  color: inherit;
+}
+
+.allai-logo--icon,
+.allai-logo--app-icon {
+  min-width: 0;
+}
+
+.allai-logo__wordmark {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.allai-logo__icon {
+  flex-shrink: 0;
+}
+
+.allai-logo__icon--glass {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.12));
+}
+
+.allai-logo__app-icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.65rem;
+  background: var(--brand-green, #10362b);
+}
+
+.allai-logo--reversed.allai-logo--full .allai-logo__wordmark {
+  color: #fff;
+}
+
+.allai-logo--color.allai-logo--full .allai-logo__wordmark {
+  color: #1c1c1c;
+}
+
+.allai-logo--monochrome.allai-logo--full .allai-logo__wordmark {
+  color: #1c1c1c;
+}

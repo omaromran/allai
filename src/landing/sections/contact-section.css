@@ -1,0 +1,333 @@
+.contact-section {
+  padding: clamp(4rem, 9vw, 6rem) 0;
+}
+
+.contact-section__header {
+  max-width: 40rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.contact-section__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.contact-section__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-section__photo-wrap {
+  position: relative;
+}
+
+.contact-section__photo {
+  height: auto;
+}
+
+.contact-section__photo .casa-visual__inner {
+  min-height: clamp(18rem, 32vw, 24rem);
+}
+
+.contact-section__float {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 14px 40px rgba(16, 54, 43, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.contact-section__float--top {
+  top: 1.25rem;
+  left: 1.25rem;
+  max-width: min(14rem, 70%);
+}
+
+.contact-section__team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--casa-white, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 14px 40px rgba(16, 54, 43, 0.1);
+}
+
+.contact-section__float-dot {
+  flex-shrink: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #3ecf8e;
+  box-shadow: 0 0 0 4px rgba(62, 207, 142, 0.25);
+  animation: contact-pulse 2s ease-in-out infinite;
+}
+
+@keyframes contact-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.contact-section__float strong {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--casa-dark, #1a1a1a);
+}
+
+.contact-section__float span {
+  font-size: 0.8125rem;
+  color: var(--casa-muted, #5c5c5c);
+}
+
+.contact-section__avatars {
+  display: flex;
+}
+
+.contact-section__avatars span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -0.45rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: var(--casa-green, #10362b);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.contact-section__avatars span:first-child {
+  margin-left: 0;
+}
+
+.contact-section__team-card p {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--casa-muted, #5c5c5c);
+}
+
+.contact-section__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--casa-white, #fff);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 24px 60px rgba(16, 54, 43, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-form__field span {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--casa-dark, #1a1a1a);
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.65rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--casa-dark, #1a1a1a);
+  background: var(--casa-cream, #faf8f4);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  outline: none;
+  border-color: rgba(16, 54, 43, 0.35);
+  box-shadow: 0 0 0 3px rgba(16, 54, 43, 0.08);
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 6.5rem;
+}
+
+.contact-form__submit {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 1rem 1.5rem;
+}
+
+.contact-section__success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.contact-section__success-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: rgba(16, 54, 43, 0.1);
+  color: var(--casa-green, #10362b);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.contact-section__success h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--casa-serif, "Playfair Display", serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.contact-section__success p {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--casa-muted, #5c5c5c);
+}
+
+.contact-channels__title {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--casa-muted, #5c5c5c);
+}
+
+.contact-channels__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.contact-channel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border-radius: 0.85rem;
+  background: var(--casa-cream, #faf8f4);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-channel:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 54, 43, 0.15);
+  box-shadow: 0 10px 24px rgba(16, 54, 43, 0.08);
+}
+
+.contact-channel__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.55rem;
+  background: var(--casa-green, #10362b);
+  color: #fff;
+}
+
+.contact-channel__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.contact-channel__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--casa-muted, #5c5c5c);
+}
+
+.contact-channel__value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--casa-dark, #1a1a1a);
+}
+
+.contact-section__demo {
+  margin: 0;
+  padding-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--casa-muted, #5c5c5c);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .contact-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section__float--top {
+    left: 0.75rem;
+    top: 0.75rem;
+  }
+
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channels__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section__float-dot {
+    animation: none;
+  }
+}

@@ -1,371 +1,264 @@
 import type { LandingCopy } from "./types";
 
 export const DEFAULT_LANDING_COPY: LandingCopy = {
-  site: {
-    brandName: "All AI",
-    companyShort: "All AI",
-  },
+  site: { brandName: "Allai", companyShort: "Allai" },
   nav: {
-    home: "Home",
     howItWorks: "How it works",
-    features: "Features",
-    about: "About Us",
+    benefits: "Benefits",
     contact: "Contact",
-  },
-  header: {
-    requestDemo: "Request demo",
+    pricing: "Pricing",
+    login: "Log in",
     getStarted: "Get started",
-    signIn: "Sign in",
   },
   hero: {
-    line1: "Stress-free ",
-    accentPhrase: "Property Maintenance",
-    accentAfter: ". ",
-    linePowered: "Powered by AI.",
-    tagline:
-      "Automate interactions with tenants and vendors. Resolve basic issues automatically. Escalate only if necessary.",
-    getStarted: "Get started",
-    signIn: "Sign in",
-  },
-  clients: {
-    title: "Clients Who Believe In Us",
-    marqueeAriaLabel: "Client logos",
-    logos: [
-      {
-        src: "/images/clients/lakeside-partners.png",
-        name: "Lakeside Partners Real Estate",
-      },
-      {
-        src: "/images/clients/lake-greystone.png",
-        name: "Lake Greystone Properties",
-      },
-      {
-        src: "/images/clients/motown-realty.png",
-        name: "Motown Realty",
-      },
-      {
-        src: "/images/clients/the-real-big-company.png",
-        name: "The Real Big Company",
-      },
-      {
-        src: "/images/clients/my-town-realty.png",
-        name: "My Town Realty",
-      },
+    headline: "Maintenance, on autopilot.",
+    subheadline:
+      "One platform to make property maintenance effortless—for owners, residents, and contractors. Powered by AI that understands every issue from report to resolution.",
+    cta: "Start now, for free",
+    ctaHint: "Currently serving multifamily, STR, and institutional portfolios",
+    pressLinks: [
+      { label: "As featured in →", href: "#press" },
+      { label: "A letter from our founders →", href: "#about" },
     ],
   },
-  valueProposition: {
-    gradientText: "Reimagining Property Maintenance",
-    line1Suffix: " with Fully Integrated, Agentic AI.",
-    line2:
-      "From diagnosis to resolution—Allai handles every step of real estate maintenance management.",
-    line3: "",
-    line4: "",
+  partners: {
+    title: "Trusted by property owners, managers, and service professionals",
+    logos: [
+      { name: "buildium" },
+      { name: "appfolio" },
+      { name: "RentManager" },
+      { name: "YARDI" },
+      { name: "Property Warehouse" },
+    ],
   },
-  builtForEveryone: {
-    title: "Built for everyone on a property",
-    subtitle:
-      "Whether you live in the unit, own it, or keep it running — here’s how All AI fits your role.",
-    tagline: "Four roles, one platform",
-    popularLabel: "Popular",
+  howItWorks: {
+    title: "How Allai works",
+    prevLabel: "Previous step",
+    nextLabel: "Next step",
+    playVideoLabel: "Play step video",
     cards: [
       {
-        icon: "homeOwner",
-        title: "Home owner",
-        description: "Maintain your home without the hassle.",
-        popular: true,
-        features: [
-          "Track maintenance & repairs",
-          "Find trusted contractors",
-          "Manage multiple properties",
-        ],
-      },
-      {
-        icon: "landlord",
-        title: "Landlord",
-        description: "Manage properties, tenants, and maintenance.",
-        features: [
-          "Manage properties & tenants",
-          "Track maintenance cases",
-          "Invite tenants automatically",
-        ],
-      },
-      {
-        icon: "tenant",
-        title: "Tenant",
-        description: "View your unit and submit requests.",
-        features: [
-          "Submit maintenance requests",
-          "Track case status",
-          "Approve appointments",
-        ],
-      },
-      {
-        icon: "contractor",
-        title: "Contractor",
-        description: "Open marketplace — real-time jobs matched to your trade.",
-        features: [
-          "Access the job marketplace",
-          "No cold leads — real maintenance needs",
-          "Direct connections with property teams",
-        ],
-      },
-    ],
-  },
-  coordination: {
-    title: "Coordinate Everyone—Without the Chase",
-    lead: "All AI keeps tenants, your team, and vendors on one shared timeline. Fewer status checks, fewer dropped threads—and maintenance that keeps moving even when you step away.",
-    items: [
-      {
         step: "01",
-        title: "Single source of truth",
-        body: "Live status and history everyone can trust—no duplicate emails or conflicting stories between parties.",
+        title: "Report in seconds",
+        body: "Residents report issues in seconds with photos, voice, or text.",
+        videoSrc: "/videos/how/step-01-report.mp4",
       },
       {
         step: "02",
-        title: "Handoffs that stick",
-        body: "Issues leave your queue with context, photos, and access notes bundled so vendors show up prepared.",
+        title: "Maya gets to work",
+        body: "Allai diagnoses the issue, prioritizes it, and finds the right pro.",
+        videoSrc: "/videos/how/step-02-maya.mp4",
       },
       {
         step: "03",
-        title: "Smarter time windows",
-        body: "Scheduling that respects tenant availability and your SLAs, with confirmations handled automatically.",
-      },
-      {
-        step: "04",
-        title: "Proof, then done",
-        body: "Close the loop with tenant sign-off or photo evidence—clear accountability from report to resolution.",
+        title: "Work gets done",
+        body: "Contractors are notified, work is completed, and everyone stays informed.",
+        videoSrc: "/videos/how/step-03-done.mp4",
       },
     ],
   },
-  hub: {
-    eyebrow: "Live operations",
-    title: "Your Maintenance Command Center",
-    lead: "Every request, message, and work order in one place. All AI centralizes intake, triage, and follow-through so your team leads instead of chasing threads across inboxes and spreadsheets.",
-    diagramAlt:
-      "Diagram: AI agents relay messages between tenant, landlord, and contractor through a central All AI hub",
-    features: [
+  maintenanceQueue: {
+    eyebrow: "AI concierge + command center",
+    title: "Your maintenance queue, handled.",
+    body: "Allai gives your portfolio an AI layer to tackle everyday maintenance big and small—and give you your time, money, and sanity back.",
+    prefix: "Allai handles",
+    tasks: [
+      "the leaky kitchen faucet",
+      "HVAC not cooling",
+      "scheduling the annual inspection",
+      "dispatching a licensed plumber",
+      "the broken smoke detector",
+      "clearing the clogged drain",
+      "vendor access coordination",
+      "tracking open work orders",
+      "approving repair quotes",
+      "tenant follow-ups",
+      "matching the right contractor",
+      "elevator outage triage",
+    ],
+  },
+  features: [
+    {
+      eyebrow: "AI concierge",
+      title: "Expert triage, on call.",
+      body: "Maya understands maintenance requests in natural language—prioritizes urgency, gathers photos, and routes work without your team lifting a finger.",
+      imageAlt: "AI concierge coordinating maintenance",
+    },
+    {
+      eyebrow: "Command center",
+      title: "A full-service hub for your portfolio.",
+      body: "Every request, vendor, and SLA in one place. Managers see live status; owners get proof of completion; contractors arrive with full context.",
+      imageAlt: "Property maintenance command center dashboard",
+    },
+  ],
+  autopilot: {
+    eyebrow: "Autopilot",
+    title: "Never think about maintenance again.",
+    body: "Subscribe to care plans tailored to each property. Allai handles scheduling, vendors, and follow-up—so you avoid costly surprises down the road.",
+  },
+  benefits: {
+    eyebrow: "More benefits",
+    title: "And for the everyday operations.",
+    items: [
       {
-        mod: "hub-feature--tl",
-        icon: "intake",
-        title: "Omni-channel intake",
-        body: "Chat, SMS, and email normalize into one thread—context and attachments stay attached from the first ping.",
+        title: "Resident requests",
+        body: "Omni-channel intake—SMS, email, portal, or voice—with automatic triage and status updates.",
       },
       {
-        mod: "hub-feature--bl",
-        icon: "routing",
-        title: "Intelligent routing",
-        body: "Urgency, category, and property rules drive the next step—self-serve answers, your staff, or the right vendor.",
+        title: "Vendor marketplace",
+        body: "Match verified contractors to real jobs with photos, access notes, and SLA rules built in.",
       },
       {
-        mod: "hub-feature--tr",
-        icon: "evidence",
-        title: "Evidence & SLAs",
-        body: "Photos, timestamps, and status history from report to close-out—audit-ready without extra paperwork.",
+        title: "Portfolio analytics",
+        body: "Spot repeat issues, track spend, and protect NOI across every building you manage.",
       },
       {
-        mod: "hub-feature--br",
-        icon: "portfolio",
-        title: "Portfolio-wide clarity",
-        body: "Roll up activity across buildings and units to spot repeat issues early and protect NOI.",
+        title: "Compliance & proof",
+        body: "Timestamps, photos, and sign-off at every step—audit-ready without extra paperwork.",
       },
     ],
   },
-  video: {
-    title: "Walk Through the Future of Maintenance",
-    description:
-      "See step-by-step how All AI handles tenant requests, triages issues, and drives resolutions—without the back-and-forth.",
-    playLabel: "Play demo",
-    seeDemo: "See Demo",
-  },
-  gpt: {
-    title:
-      "The All AI Agent — A First-of-Its-Kind Partner for Stress-Free Home Maintenance",
-    description:
-      "All AI is an intelligent agent built to take the friction out of home maintenance. It keeps tenants, property teams, and vendors in sync automatically — triaging requests, sharing updates, and driving resolutions so every stakeholder stays informed without the usual back-and-forth.",
-    carouselLabel: "All AI agent capabilities",
-    prevLabel: "Previous agent features",
-    nextLabel: "Next agent features",
-    cards: [
-      {
-        user: "Hi, my kitchen faucet is leaking.",
-        ai: "Thanks for reporting! Is it a steady drip or a continuous flow?",
-        title: "Human-Like Conversations",
-        desc: "Understands tenant requests naturally—no rigid scripts required.",
-      },
-      {
-        user: "The AC isn't cooling my apartment properly.",
-        ai: "Got it. Have you checked whether the filter needs cleaning?",
-        title: "Advanced Diagnostics",
-        desc: "Pinpoints likely causes fast with contextual follow-up questions.",
-      },
-      {
-        user: "The living room lights won't turn on.",
-        ai: "Understood. Did you already check the circuit breaker?",
-        title: "Adaptive Problem Solving",
-        desc: "Learns from each thread so the next conversation is even smoother.",
-      },
-      {
-        user: "Can you send someone before Friday?",
-        ai: "I’ve matched this to your SLA and penciled Wed 1–3 PM—confirm?",
-        title: "Vendor-Aware Scheduling",
-        desc: "Respects your vendors, access rules, and time windows automatically.",
-      },
-      {
-        user: "Did the plumber actually show up?",
-        ai: "Yes—check-in at 2:14 PM with a photo of the completed repair.",
-        title: "Proof & Transparency",
-        desc: "Photos, timestamps, and status in one place for tenants and owners.",
-      },
-      {
-        user: "Same unit keeps reporting clogged drains.",
-        ai: "Flagging a repeat pattern for your portfolio dashboard and PM inbox.",
-        title: "Portfolio Intelligence",
-        desc: "Surfaces repeat issues across buildings before they hit your NOI.",
-      },
-    ],
-  },
-  about: {
-    eyebrow: "Our mission",
-    title: "Built by People Who Felt the Friction",
-    p1Before:
-      "Great portfolios shouldn’t be held back by voicemails, spreadsheets, and “who’s covering the inbox today?” We started ",
-    p1After:
-      " after watching capable teams drown in coordination—not in strategy.",
-    p2Before: "Our founders blend ",
-    p2Emphasis: "real estate, technology, and operations",
-    p2After:
-      " so the product matches how maintenance really gets done on the ground: fast triage, clear ownership, and proof when the job is done.",
-    spotlightAlt:
-      "Property team collaborating on maintenance and tenant coordination",
+  platform: {
+    eyebrow: "Platform depth",
+    title: "Enabled by a deep understanding of your properties.",
+    body: "From unit history to vendor performance, Allai captures the details that matter—so every request starts with full context and resolves faster.",
     pillars: [
       {
-        icon: "operator",
-        title: "Operator-led product",
-        body: "Built around portfolios, SLAs, and vendors—not a generic chat widget bolted onto your stack.",
+        title: "Issue intelligence",
+        body: "Category, urgency, and repeat patterns learned from every ticket across your portfolio.",
       },
       {
-        icon: "trust",
-        title: "Trust in the open",
-        body: "Tenants, managers, and vendors see the same timeline—accountability beats black-box automation.",
+        title: "Vendor network",
+        body: "Licensed trades matched by skill, geography, and availability—with ratings you can trust.",
       },
       {
-        icon: "scale",
-        title: "Scale without chaos",
-        body: "More doors shouldn’t mean more inbox anxiety—automation should absorb the noise, not add to it.",
+        title: "Resident experience",
+        body: "Proactive updates and clear timelines—so tenants feel heard without flooding your inbox.",
+      },
+      {
+        title: "Owner reporting",
+        body: "Spend, SLA compliance, and resolution time—rolled up the way executives actually want to see it.",
       },
     ],
-    meetTeam: "Meet the team",
-    bookConversation: "Book a conversation",
-  },
-  team: {
-    title: "Meet Our Team",
-    members: [
-      {
-        name: "Ghassan Ghorayeb",
-        role: "Co Founder",
-        linkedin: "https://www.linkedin.com/in/ghassan-ghorayeb/",
-        linkedinAriaLabel: "Ghassan Ghorayeb on LinkedIn",
-        bio: [
-          "Retinal Surgeon & Chief of Division",
-          "Co-Founder of RBC, a multimillion-dollar commercial and medical real estate portfolio, driving development of advanced healthcare facilities",
-          "MIT MBA; Published innovator applying AI to healthcare and property technology solutions",
-        ],
-        imageSrc: "/images/founders/ghassan.jpeg",
-      },
-      {
-        name: "Nihal Bhujle",
-        role: "Co Founder",
-        linkedin: "https://www.linkedin.com/in/nihal-bhujle/",
-        linkedinAriaLabel: "Nihal Bhujle on LinkedIn",
-        bio: [
-          "Led Digital Product Innovation at UBS and Gartner's CxO global advisory practice",
-          "Co-founder of RBC, a multi-million dollar commercial and residential real estate portfolio, delivering an annualized return of 16% over the last decade to investors",
-          "MIT MBA, BS Finance Wharton School, deep background in corporate finance advisory",
-        ],
-        imageSrc: "/images/founders/nihal.jpeg",
-      },
-      {
-        name: "Omar Jacques Omran",
-        role: "Co Founder",
-        linkedin: "https://www.linkedin.com/in/omar-omran/",
-        linkedinAriaLabel: "Omar Jacques Omran on LinkedIn",
-        bio: [
-          "Led Technology for 3 large public companies (Six Flags, Welbilt, Middleby, : $3B–10B) generating $500M in net profit increase",
-          "Named 2024 Top Global Innovator",
-          "MIT MBA; 1st prize winner largest global hackathon",
-        ],
-        imageSrc: "/images/founders/omar.jpeg",
-      },
-    ],
-  },
-  ctaBanner: {
-    title: "Ready to Upgrade Your Maintenance Game?",
-    bookDemo: "Book a Demo",
-    chatWithAi: "Chat with All AI",
   },
   testimonials: {
-    title: "How All AI Makes a Difference",
-    leadBefore: "Real Stories of How ",
-    leadAfter:
-      " Is Transforming Property Management—From Seamless Maintenance to Happier Living Experiences.",
     items: [
       {
         quote:
-          "All AI has made managing multiple rental units effortless. I get instant updates on maintenance requests, and repairs are handled before they affect tenant satisfaction.",
-        who: "John Harris",
-        meta: "Tenant, Brookside Residences",
-      },
-      {
-        featured: true,
-        quote:
-          "Before All AI, reporting an issue meant endless calls and delays. Now, I just log it on the chat, and it’s fixed in no time. Living here feels stress-free.",
-        who: "David Reynolds",
-        meta: "Tenant, Brookside Residences",
+          "Allai has completely transformed how we handle maintenance. Issues get resolved faster, tenants are happier, and we save hours every week.",
+        name: "Jessica M.",
+        role: "Property Manager",
       },
       {
         quote:
-          "Before All AI, reporting an issue meant endless calls and delays. Now, I just log it on the app, and it’s fixed in no time. Living here feels stress-free.",
-        who: "David Reynolds",
-        meta: "Tenant, Brookside Residences",
+          "Our vendors show up with full context every time. We finally stopped playing phone tag between tenants, owners, and contractors.",
+        name: "David R.",
+        role: "Portfolio Owner",
+      },
+      {
+        quote:
+          "Maya handles the everyday follow-ups so my team can focus on the properties—not the ticket queue.",
+        name: "Priya K.",
+        role: "Regional Manager",
       },
     ],
   },
-  faq: {
-    heading: "Frequently Asked Questions",
-    filterAll: "All Questions",
-    filterGeneral: "General",
-    items: [
-      {
-        q: "How does All AI handle my data?",
-        a: "We apply industry-standard encryption, strict access controls, and clear data retention policies. Tenant and property data is processed to deliver maintenance outcomes and is never sold to third parties.",
-      },
-      {
-        q: "Is my information secure with AI?",
-        a: "Yes. Our infrastructure follows security best practices, and AI interactions are logged for auditability while minimizing sensitive data exposure in prompts.",
-      },
-      {
-        q: "What if the AI can't solve an issue?",
-        a: "If All AI can't resolve a problem, it seamlessly escalates to your team or a technician, ensuring no request goes unresolved.",
-      },
-      {
-        q: "How do I get started with my portfolio?",
-        a: "Book a demo and we'll map your workflows, connect channels tenants already use, and tailor escalation paths to your vendors and staff.",
-      },
-    ],
+  stats: [
+    { value: "43%", label: "faster issue resolution", icon: "speed" },
+    { value: "28%", label: "reduction in maintenance costs", icon: "cost" },
+    { value: "98%", label: "resident satisfaction", icon: "heart" },
+    { value: "24/7", label: "AI concierge support", icon: "clock" },
+  ],
+  finalCta: {
+    title: "Ready to simplify property maintenance?",
+    body: "Join thousands of property professionals using Allai to save time, cut costs, and keep properties in top shape.",
+    cardTitle: "Get started for free",
+    cardSubtitle: "No credit card • Cancel anytime",
+    button: "Start with Maya",
   },
+  trust: {
+    aligned: {
+      title: "A business model aligned with you.",
+      body: "No vendor kickbacks, no ads. We work for property owners and managers—not the highest bidder.",
+      cta: "Learn more",
+    },
+    privacy: {
+      title: "Your property data belongs to you.",
+      body: "You trust us with operational data across your portfolio. We work to safeguard it every day.",
+      cta: "Learn more",
+    },
+  },
+  contact: {
+    eyebrow: "Contact us",
+    title: "Let's talk about your portfolio",
+    body: "Tell us about your properties and maintenance workflow—we'll show you how Allai can run it on autopilot.",
+    imageAlt: "Property manager reviewing maintenance with Allai",
+    highlight: { value: "< 2 hrs", label: "avg. first response" },
+    teamAvatars: ["OM", "NK", "GH"],
+    teamNote: "Our team replies within one business day.",
+    demoPrompt: "Prefer to explore on your own?",
+    demoLink: "Start free",
+    form: {
+      nameLabel: "Name",
+      namePlaceholder: "Jane Smith",
+      emailLabel: "Work email",
+      emailPlaceholder: "jane@propertyco.com",
+      companyLabel: "Company",
+      companyPlaceholder: "Your property group",
+      messageLabel: "How can we help?",
+      messagePlaceholder: "Portfolio size, current tools, and what you'd like Allai to handle…",
+      submit: "Send message",
+      successTitle: "Message received",
+      successNote:
+        "Thanks for reaching out. Someone from Allai will get back to you shortly.",
+      sendAnother: "Send another message",
+    },
+    channels: {
+      title: "Other ways to reach us",
+      items: [
+        {
+          icon: "mail",
+          label: "Email",
+          value: "hello@allai.com",
+          href: "mailto:hello@allai.com",
+        },
+        {
+          icon: "phone",
+          label: "Phone",
+          value: "(555) 123-4567",
+          href: "tel:+15551234567",
+        },
+        {
+          icon: "calendar",
+          label: "Book a demo",
+          value: "30 min call",
+          href: "/pricing",
+        },
+      ],
+    },
+  },
+  faq: [
+    {
+      q: "What is Allai and who is it for?",
+      a: "Allai is an AI-powered maintenance platform for property owners, managers, residents, and contractors—built to take every issue from report to resolution.",
+    },
+    {
+      q: "What's included in the platform?",
+      a: "AI triage, vendor routing, scheduling, resident updates, portfolio analytics, and autopilot care plans—customized to your properties and SLAs.",
+    },
+    {
+      q: "How does pricing work?",
+      a: "Plans scale with portfolio size and features. Book a demo and we'll map a package to your buildings—no surprise vendor markups.",
+    },
+    {
+      q: "How is Allai different from a work order system?",
+      a: "Traditional systems track tickets. Allai resolves them—AI handles triage, coordination, and follow-through so your team leads instead of chases.",
+    },
+  ],
   footer: {
-    tagline:
-      "Smart, AI-powered property maintenance from issue report to resolution.",
-    quickLinksTitle: "Quick Links",
-    legalTitle: "Legal & Policies",
-    followTitle: "Follow",
-    privacy: "Privacy Policy",
-    terms: "Terms of Service",
-    dataSecurity: "Data Security",
-    socialX: "All AI on X",
-    socialFacebook: "All AI on Facebook",
-    socialInstagram: "All AI on Instagram",
-    copyright: "© 2026 All AI. All rights reserved.",
-    bottomTagline: "AI-native maintenance for modern portfolios.",
+    tagline: "AI-native maintenance for modern portfolios.",
+    productLinks: ["How it works", "Benefits", "Pricing", "Integrations", "Security"],
+    companyLinks: ["About", "Careers", "Contact", "Privacy"],
+    copyright: "© 2026 Allai. All rights reserved.",
   },
 };

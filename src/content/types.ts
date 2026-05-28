@@ -1,158 +1,114 @@
-export type RoleCardIconId =
-  | "homeOwner"
-  | "landlord"
-  | "tenant"
-  | "contractor";
-
-export type HubFeatureIconId = "intake" | "routing" | "evidence" | "portfolio";
-
-export type AboutPillarIconId = "operator" | "trust" | "scale";
-
 export interface LandingCopy {
-  site: {
-    brandName: string;
-    companyShort: string;
-  };
+  site: { brandName: string; companyShort: string };
   nav: {
-    home: string;
     howItWorks: string;
-    features: string;
-    about: string;
+    benefits: string;
     contact: string;
-  };
-  header: {
-    requestDemo: string;
+    pricing: string;
+    login: string;
     getStarted: string;
-    signIn: string;
   };
   hero: {
-    line1: string;
-    accentPhrase: string;
-    accentAfter: string;
-    linePowered: string;
-    tagline: string;
-    getStarted: string;
-    signIn: string;
+    headline: string;
+    subheadline: string;
+    cta: string;
+    ctaHint: string;
+    pressLinks: { label: string; href: string }[];
   };
-  clients: {
+  howItWorks: {
     title: string;
-    marqueeAriaLabel: string;
-    logos: { src: string; name: string }[];
-  };
-  /** Centered statement below the logo marquee (light band + gradient lead-in). */
-  valueProposition: {
-    gradientText: string;
-    line1Suffix: string;
-    line2: string;
-    line3: string;
-    line4: string;
-  };
-  builtForEveryone: {
-    title: string;
-    subtitle: string;
-    tagline: string;
-    popularLabel: string;
-    cards: {
-      icon: RoleCardIconId;
-      title: string;
-      description: string;
-      popular?: boolean;
-      features: string[];
-    }[];
-  };
-  coordination: {
-    title: string;
-    lead: string;
-    items: { step: string; title: string; body: string }[];
-  };
-  hub: {
-    eyebrow: string;
-    title: string;
-    lead: string;
-    diagramAlt: string;
-    features: {
-      mod: "hub-feature--tl" | "hub-feature--bl" | "hub-feature--tr" | "hub-feature--br";
-      icon: HubFeatureIconId;
-      title: string;
-      body: string;
-    }[];
-  };
-  video: {
-    title: string;
-    description: string;
-    playLabel: string;
-    seeDemo: string;
-  };
-  gpt: {
-    title: string;
-    description: string;
-    carouselLabel: string;
     prevLabel: string;
     nextLabel: string;
-    cards: { user: string; ai: string; title: string; desc: string }[];
+    playVideoLabel: string;
+    cards: { step: string; title: string; body: string; videoSrc?: string }[];
   };
-  about: {
-    eyebrow: string;
+  partners: {
     title: string;
-    p1Before: string;
-    p1After: string;
-    p2Before: string;
-    p2Emphasis: string;
-    p2After: string;
-    spotlightAlt: string;
-    pillars: {
-      icon: AboutPillarIconId;
-      title: string;
-      body: string;
-    }[];
-    meetTeam: string;
-    bookConversation: string;
-  };
-  team: {
-    title: string;
-    members: {
-      name: string;
-      role: string;
-      linkedin: string;
-      linkedinAriaLabel: string;
-      bio: string[];
-      imageSrc: string;
-    }[];
-  };
-  ctaBanner: {
-    title: string;
-    bookDemo: string;
-    chatWithAi: string;
+    logos: { name: string }[];
   };
   testimonials: {
-    title: string;
-    leadBefore: string;
-    leadAfter: string;
-    items: {
-      quote: string;
-      who: string;
-      meta: string;
-      featured?: boolean;
-    }[];
+    items: { quote: string; name: string; role: string }[];
   };
-  faq: {
-    heading: string;
-    filterAll: string;
-    filterGeneral: string;
-    items: { q: string; a: string }[];
+  stats: { value: string; label: string; icon: string }[];
+  finalCta: {
+    title: string;
+    body: string;
+    cardTitle: string;
+    cardSubtitle: string;
+    button: string;
+  };
+  maintenanceQueue: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    prefix: string;
+    tasks: string[];
+  };
+  features: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    imageAlt: string;
+  }[];
+  autopilot: {
+    eyebrow: string;
+    title: string;
+    body: string;
+  };
+  benefits: {
+    eyebrow: string;
+    title: string;
+    items: { title: string; body: string }[];
+  };
+  platform: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    pillars: { title: string; body: string }[];
+  };
+  trust: {
+    aligned: { title: string; body: string; cta: string };
+    privacy: { title: string; body: string; cta: string };
+  };
+  faq: { q: string; a: string }[];
+  contact: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    imageAlt: string;
+    highlight: { value: string; label: string };
+    teamAvatars: string[];
+    teamNote: string;
+    demoPrompt: string;
+    demoLink: string;
+    form: {
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      companyLabel: string;
+      companyPlaceholder: string;
+      messageLabel: string;
+      messagePlaceholder: string;
+      submit: string;
+      successTitle: string;
+      successNote: string;
+      sendAnother: string;
+    };
+    channels: {
+      title: string;
+      items: {
+        icon: "mail" | "phone" | "calendar";
+        label: string;
+        value: string;
+        href: string;
+      }[];
+    };
   };
   footer: {
     tagline: string;
-    quickLinksTitle: string;
-    legalTitle: string;
-    followTitle: string;
-    privacy: string;
-    terms: string;
-    dataSecurity: string;
-    socialX: string;
-    socialFacebook: string;
-    socialInstagram: string;
+    productLinks: string[];
+    companyLinks: string[];
     copyright: string;
-    bottomTagline: string;
   };
 }
