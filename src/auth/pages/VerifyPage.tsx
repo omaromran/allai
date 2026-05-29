@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 import { ProgressSteps } from "../components/ProgressSteps";
 import type { UserRole } from "../types";
@@ -20,7 +21,8 @@ export default function VerifyPage() {
 
   return (
     <div className="auth-page auth-page--form">
-      <header className="auth-topbar auth-topbar--center">
+      <header className="auth-topbar auth-topbar--balanced">
+        <AuthBackHomeLink />
         <AuthLogo />
       </header>
 

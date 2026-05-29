@@ -1,4 +1,5 @@
 import { AUTH_IMAGES } from "../constants";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 import { ProgressSteps } from "../components/ProgressSteps";
 
@@ -7,6 +8,7 @@ export default function SignUpBusinessPage() {
     <div className="auth-page auth-page--split">
       <header className="auth-topbar auth-topbar--split">
         <AuthLogo />
+        <AuthBackHomeLink />
       </header>
 
       <div className="auth-split">

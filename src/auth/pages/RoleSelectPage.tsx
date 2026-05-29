@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AUTH_IMAGES, ROLE_META, WELCOME_BENEFITS } from "../constants";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 import { SecurityFooter } from "../components/SecurityFooter";
 import type { UserRole } from "../types";
@@ -28,9 +29,7 @@ export default function RoleSelectPage() {
     <div className="auth-page auth-page--role">
       <header className="auth-topbar">
         <AuthLogo />
-        <Link to="/sign-in" className="auth-topbar__link">
-          Log in
-        </Link>
+        <AuthBackHomeLink />
       </header>
 
       <div className="auth-role-layout">
@@ -81,6 +80,9 @@ export default function RoleSelectPage() {
               );
             })}
           </div>
+          <p className="auth-form-footer auth-role-layout__login">
+            Already have an account? <Link to="/sign-in">Log in</Link>
+          </p>
           <SecurityFooter />
         </div>
       </div>

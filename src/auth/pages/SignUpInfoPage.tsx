@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 import { ProgressSteps } from "../components/ProgressSteps";
 import { ROLE_META } from "../constants";
@@ -57,7 +58,8 @@ export default function SignUpInfoPage() {
 
   return (
     <div className="auth-page auth-page--form">
-      <header className="auth-topbar auth-topbar--center">
+      <header className="auth-topbar auth-topbar--balanced">
+        <AuthBackHomeLink />
         <AuthLogo />
       </header>
 

@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { AUTH_IMAGES, ROLE_META } from "../constants";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 import { ProgressSteps } from "../components/ProgressSteps";
 import type { UserRole } from "../types";
@@ -13,6 +14,7 @@ export default function SignUpPropertyPage() {
     <div className="auth-page auth-page--split">
       <header className="auth-topbar auth-topbar--split">
         <AuthLogo />
+        <AuthBackHomeLink />
       </header>
 
       <div className="auth-split">

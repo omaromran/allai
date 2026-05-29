@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { AuthBackHomeLink } from "../components/AuthBackHomeLink";
 import { AuthLogo } from "../components/AuthLogo";
 
 export default function InvitePage() {
   return (
     <div className="auth-page auth-page--form">
-      <header className="auth-topbar auth-topbar--center">
+      <header className="auth-topbar auth-topbar--balanced">
+        <AuthBackHomeLink />
         <AuthLogo />
       </header>
 
