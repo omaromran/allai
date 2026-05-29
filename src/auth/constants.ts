@@ -2,6 +2,7 @@ import type { UserRole } from "./types";
 
 export const AUTH_IMAGES = {
   roleHero: "/images/auth/role-hero-house.jpg",
+  signIn: "/images/auth/property-living-room.jpg",
   property: "/images/auth/property-living-room.jpg",
   contractor: "/images/auth/contractor-tools.jpg",
   cards: {

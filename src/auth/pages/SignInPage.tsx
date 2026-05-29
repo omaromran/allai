@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AUTH_IMAGES } from "../constants";
 import { AuthLogo } from "../components/AuthLogo";
 
 type LoginTab = "email" | "phone" | "magic";
@@ -39,126 +40,149 @@ export default function SignInPage() {
   const goToApp = () => navigate("/app");
 
   return (
-    <div className="auth-page auth-page--form">
-      <header className="auth-topbar auth-topbar--center">
+    <div className="auth-page auth-page--split">
+      <header className="auth-topbar auth-topbar--split">
         <AuthLogo />
+        <Link to="/" className="auth-topbar__link auth-topbar__link--back">
+          <svg viewBox="0 0 24 24" width={16} height={16} aria-hidden="true">
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 18l-6-6 6-6"
+            />
+          </svg>
+          Go back home
+        </Link>
       </header>
 
-      <div className="auth-form-shell auth-form-shell--narrow">
-        <h1>Welcome back</h1>
-        <p className="auth-form-lead">Sign in to your Allai account</p>
+      <div className="auth-split auth-split--visual-left">
+        <div className="auth-split__visual">
+          <img src={AUTH_IMAGES.signIn} alt="Modern home interior" loading="eager" />
+          <div className="auth-split__visual-caption">
+            <p className="auth-split__visual-eyebrow">Allai</p>
+            <p className="auth-split__visual-quote">Maintenance, on autopilot.</p>
+          </div>
+        </div>
 
-        <div className="auth-tabs" role="tablist" aria-label="Sign in method">
-          {(
-            [
-              ["email", "Email & Password"],
-              ["phone", "Phone"],
-              ["magic", "Magic Link"],
-            ] as const
-          ).map(([key, label]) => (
-            <button
-              key={key}
-              type="button"
-              role="tab"
-              aria-selected={tab === key}
-              className={`auth-tabs__btn${tab === key ? " auth-tabs__btn--active" : ""}`}
-              onClick={() => setTab(key)}
+        <div className="auth-split__form auth-split__form--login">
+          <h1>Welcome back</h1>
+          <p className="auth-form-lead">Sign in to your Allai account</p>
+
+          <div className="auth-tabs" role="tablist" aria-label="Sign in method">
+            {(
+              [
+                ["email", "Email & Password"],
+                ["phone", "Phone"],
+                ["magic", "Magic Link"],
+              ] as const
+            ).map(([key, label]) => (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={tab === key}
+                className={`auth-tabs__btn${tab === key ? " auth-tabs__btn--active" : ""}`}
+                onClick={() => setTab(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {tab === "email" ? (
+            <form
+              className="auth-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                goToApp();
+              }}
             >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {tab === "email" ? (
-          <form
-            className="auth-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              goToApp();
-            }}
-          >
-            <div className="auth-field">
-              <label htmlFor="loginEmail">Email</label>
-              <input id="loginEmail" type="email" autoComplete="email" />
-            </div>
-            <PasswordField id="loginPassword" label="Password" />
-            <div className="auth-form-row auth-form-row--between">
-              <label className="auth-checkbox">
-                <input type="checkbox" /> Remember me
-              </label>
-              <Link to="/sign-in" className="auth-link">
-                Forgot password?
-              </Link>
-            </div>
-            <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
-              Sign in
-            </button>
-          </form>
-        ) : null}
-
-        {tab === "phone" ? (
-          <form
-            className="auth-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              goToApp();
-            }}
-          >
-            <div className="auth-field">
-              <label htmlFor="loginPhone">Phone number</label>
-              <div className="auth-field__phone">
-                <select aria-label="Country code" defaultValue="+1">
-                  <option value="+1">+1</option>
-                </select>
-                <input id="loginPhone" type="tel" autoComplete="tel" />
+              <div className="auth-field">
+                <label htmlFor="loginEmail">Email</label>
+                <input id="loginEmail" type="email" autoComplete="email" />
               </div>
-            </div>
-            <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
-              Send code
-            </button>
-          </form>
-        ) : null}
+              <PasswordField id="loginPassword" label="Password" />
+              <div className="auth-form-row auth-form-row--between">
+                <label className="auth-checkbox">
+                  <input type="checkbox" /> Remember me
+                </label>
+                <Link to="/sign-in" className="auth-link">
+                  Forgot password?
+                </Link>
+              </div>
+              <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
+                Sign in
+              </button>
+            </form>
+          ) : null}
 
-        {tab === "magic" ? (
-          <form
-            className="auth-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              goToApp();
-            }}
-          >
-            <div className="auth-field">
-              <label htmlFor="magicEmail">Email</label>
-              <input id="magicEmail" type="email" autoComplete="email" />
-            </div>
-            <p className="auth-form-hint">
-              We&apos;ll email you a secure link—no password needed.
-            </p>
-            <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
-              Email me a link
-            </button>
-          </form>
-        ) : null}
+          {tab === "phone" ? (
+            <form
+              className="auth-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                goToApp();
+              }}
+            >
+              <div className="auth-field">
+                <label htmlFor="loginPhone">Phone number</label>
+                <div className="auth-field__phone">
+                  <select aria-label="Country code" defaultValue="+1">
+                    <option value="+1">+1</option>
+                  </select>
+                  <input id="loginPhone" type="tel" autoComplete="tel" />
+                </div>
+              </div>
+              <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
+                Send code
+              </button>
+            </form>
+          ) : null}
 
-        <div className="auth-divider">
-          <span>or continue with</span>
+          {tab === "magic" ? (
+            <form
+              className="auth-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                goToApp();
+              }}
+            >
+              <div className="auth-field">
+                <label htmlFor="magicEmail">Email</label>
+                <input id="magicEmail" type="email" autoComplete="email" />
+              </div>
+              <p className="auth-form-hint">
+                We&apos;ll email you a secure link—no password needed.
+              </p>
+              <button type="submit" className="auth-btn auth-btn--primary auth-btn--block auth-btn--lg">
+                Email me a link
+              </button>
+            </form>
+          ) : null}
+
+          <div className="auth-divider">
+            <span>or continue with</span>
+          </div>
+
+          <div className="auth-social-row">
+            <SocialButton label="Continue with Google">
+              <span>G</span>
+            </SocialButton>
+            <SocialButton label="Continue with Apple">
+              <span aria-hidden="true">&#63743;</span>
+            </SocialButton>
+            <SocialButton label="Continue with Microsoft">
+              <span>M</span>
+            </SocialButton>
+          </div>
+
+          <p className="auth-form-footer">
+            New to Allai? <Link to="/sign-up">Create account</Link>
+          </p>
         </div>
-
-        <div className="auth-social-row">
-          <SocialButton label="Continue with Google">
-            <span>G</span>
-          </SocialButton>
-          <SocialButton label="Continue with Apple">
-            <span aria-hidden="true">&#63743;</span>
-          </SocialButton>
-          <SocialButton label="Continue with Microsoft">
-            <span>M</span>
-          </SocialButton>
-        </div>
-
-        <p className="auth-form-footer">
-          New to Allai? <Link to="/sign-up">Create account</Link>
-        </p>
       </div>
     </div>
   );
